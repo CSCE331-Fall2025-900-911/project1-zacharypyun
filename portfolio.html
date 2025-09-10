@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Zachary Pyun - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="header">
@@ -12,14 +13,14 @@
         <button class="header-button" onclick="window.location.href='qualifications.html'">Qualifications</button>
         <button class="header-button" onclick="window.location.href='service.html'">Service</button>
         <button class="header-button" onclick="window.location.href='genAI.html'">Gen-AI</button>
-        <button>Dark Mode</button>
-    </div>  
-    <div id="projects">
+        <button class="header-button">Dark Mode</button>
+    </div> 
+    <div id="portfolio-container">
         <h1>My Projects</h1>
-        <div id="project1">
-            <img src="">
+        <div class="project">
+            <img src="" alt="Sports Card App">
             <div class="project-text">
-                <h2>Sports Card Collection Management Application</h1>
+                <h2>Sports Card Collection Management Application</h2>
                 <a href="https://github.com/Zacharypyun/Sports-Card-Database" target="_blank">GitHub</a>
                 <h3>Techstack: FastAPI, PostgreSQL, React, TypeScript, Python</h3>
                 <ul>
@@ -29,27 +30,31 @@
                 </ul>
             </div>
         </div>
-        <div id="project2">
-            <img src="">
-            <h2>Machine Learning Digit Classification</h1>
-            <a href="https://github.com/Zacharypyun/Machine-Learning-Digit-Classification" target="_blank">GitHub</a>
-            <h3>Techstack: Python, NumPy, Neural Networks, Deep Learning</h3>
-            <ul>
-                <li>Implemented perceptron + multi-layer neural networks for binary classification, regression, and digit recognition (92% accuracy on MNIST subset).</li>
-                <li>Coded gradient descent, backpropagation, and ReLU activation manually to deepen understanding of model training.</li>
-                <li>Benchmarked different architectures (perceptron, deep NN, RNN) and documented tradeoffs, demonstrating 3× faster training with shallow models vs. 15% higher accuracy using deep networks.</li>
-            </ul>
+        <div class="project">
+            <img src="" alt="Machine Learning Project">
+            <div class="project-text">
+                <h2>Machine Learning Digit Classification</h2>
+                <a href="https://github.com/Zacharypyun/Machine-Learning-Digit-Classification" target="_blank">GitHub</a>
+                <h3>Techstack: Python, NumPy, Neural Networks, Deep Learning</h3>
+                <ul>
+                    <li>Implemented perceptron + multi-layer neural networks for binary classification, regression, and digit recognition (92% accuracy on MNIST subset).</li>
+                    <li>Coded gradient descent, backpropagation, and ReLU activation manually to deepen understanding of model training.</li>
+                    <li>Benchmarked different architectures (perceptron, deep NN, RNN) and documented tradeoffs, demonstrating 3× faster training with shallow models vs. 15% higher accuracy using deep networks.</li>
+                </ul>
+            </div>
         </div>
-        <div id="project3">
-            <img src="">
-            <h2>Dallas Mavericks Statistics Visualizer</h1>
-            <a href="https://github.com/Zacharypyun/Dallas-Mavericks-Statistics-Visualizer" target="_blank">GitHub</a>
-            <h3>Techstack: SQL, MySQL, Power BI, Python</h3>
-            <ul>
-                <li>Built a Power BI dashboard comparing regular season vs. playoff performance across 8+ key metrics (pts, reb, ast, blk, stl, fg%, 3pt%, to), enabling 30% faster statistical analysis for presentations.</li>
-                <li>Scraped 1,200+ data points from ESPN.com using Python and transformed them into a clean .CSV file via SQL queries, improving preprocessing efficiency by 45%.</li>
-                <li>Deployed interactive filters in Power BI to allow dynamic comparisons across players and timeframes, increasing usability and engagement by 60%.</li>
-            </ul>
+        <div class="project">
+            <img src="" alt="Dallas Mavericks Visualizer">
+            <div class="project-text">
+                <h2>Dallas Mavericks Statistics Visualizer</h2>
+                <a href="https://github.com/Zacharypyun/Dallas-Mavericks-Statistics-Visualizer" target="_blank">GitHub</a>
+                <h3>Techstack: SQL, MySQL, Power BI, Python</h3>
+                <ul>
+                    <li>Built a Power BI dashboard comparing regular season vs. playoff performance across 8+ key metrics (pts, reb, ast, blk, stl, fg%, 3pt%, to), enabling 30% faster statistical analysis for presentations.</li>
+                    <li>Scraped 1,200+ data points from ESPN.com using Python and transformed them into a clean .CSV file via SQL queries, improving preprocessing efficiency by 45%.</li>
+                    <li>Deployed interactive filters in Power BI to allow dynamic comparisons across players and timeframes, increasing usability and engagement by 60%.</li>
+                </ul>
+            </div>
         </div>
     </div>    
 </body>
