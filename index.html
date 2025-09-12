@@ -13,7 +13,7 @@
         <button class="header-button" onclick="window.location.href='qualifications.html'">Qualifications</button>
         <button class="header-button" onclick="window.location.href='service.html'">Service</button>
         <button class="header-button" onclick="window.location.href='genAI.html'">Gen-AI</button>
-        <button class="header-button">Dark Mode</button>
+        <button class="header-button" id="dark-button">Dark Mode</button>
     </div> 
     <div id="hero-section">
         <h1>Zachary Pyun</h1>
@@ -54,5 +54,22 @@
             <p>AI-generated content showcase</p>
         </button>
     </div>
+
+    <script>
+        window.onload = function() {
+            const savedTheme = localStorage.getItem("theme")
+            const link = document.querySelector('link[rel="stylesheet"]')
+            if (savedTheme) {
+                link.href = savedTheme
+            }
+        }
+
+        document.getElementById("dark-button").onclick = function() {
+            const link = document.querySelector('link[rel="stylesheet"]')
+            const newTheme = link.href.includes("style.css") ? "temp.css" : "style.css"
+            link.href = newTheme
+            localStorage.setItem("theme", newTheme)
+        }
+    </script>
 </body>
 </html>
