@@ -13,8 +13,9 @@
         <button class="header-button" onclick="window.location.href='qualifications.html'">Qualifications</button>
         <button class="header-button" onclick="window.location.href='service.html'">Service</button>
         <button class="header-button" onclick="window.location.href='genAI.html'">Gen-AI</button>
-        <button class="header-button" id="dark-button">Dark Mode</button>
+        <button class="header-button" id="layout-toggle-button">Alternative Layout</button>
     </div> 
+    
     <div id="hero-section">
         <h1>Zachary Pyun</h1>
         <p>Computer Science Student & Aspiring Software Engineer</p>
@@ -56,19 +57,41 @@
     </div>
 
     <script>
+        (function() {
+            const savedTheme = localStorage.getItem("theme")
+            if (savedTheme) {
+                document.querySelector('link[rel="stylesheet"]').href = savedTheme
+            }
+        })();
+
         window.onload = function() {
             const savedTheme = localStorage.getItem("theme")
             const link = document.querySelector('link[rel="stylesheet"]')
             if (savedTheme) {
                 link.href = savedTheme
             }
+            
+            const toggleButton = document.getElementById("layout-toggle-button")
+            if (savedTheme && savedTheme.includes("alt.css")) {
+                toggleButton.textContent = "Original Layout"
+            } else {
+                toggleButton.textContent = "Alternative Layout"
+            }
         }
 
-        document.getElementById("dark-button").onclick = function() {
+        document.getElementById("layout-toggle-button").onclick = function() {
             const link = document.querySelector('link[rel="stylesheet"]')
-            const newTheme = link.href.includes("style.css") ? "temp.css" : "style.css"
-            link.href = newTheme
-            localStorage.setItem("theme", newTheme)
+            const toggleButton = document.getElementById("layout-toggle-button")
+            
+            if (link.href.includes("style.css")) {
+                link.href = "alt.css"
+                localStorage.setItem("theme", "alt.css")
+                toggleButton.textContent = "Original Layout"
+            } else {
+                link.href = "style.css"
+                localStorage.setItem("theme", "style.css")
+                toggleButton.textContent = "Alternative Layout"
+            }
         }
     </script>
 </body>
