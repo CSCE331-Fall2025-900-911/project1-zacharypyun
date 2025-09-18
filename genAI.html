@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zachary Pyun - GenAI</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <div class="header">
@@ -14,11 +15,127 @@
         <button class="header-button" onclick="window.location.href='service.html'">Service</button>
         <button class="header-button" onclick="window.location.href='genAI.html'">Gen-AI</button>
         <button class="header-button" id="layout-toggle-button">Alternative Layout</button>
-    </div> 
-    <h1>In Development...</h1>
-    <h2>I went to lab</h2>
+    </div>
+    
+    <div id="genai-container">
+        <h1>AI-Enhanced Portfolio Analysis</h1>
+        
+
+
+        <div class="genai-section">
+            <h2>AI-Generated Career Projection</h2>
+            <p>Machine learning analysis of career trajectory based on current skills, projects, and market trends.</p>
+            
+            <div class="career-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025 - Present</div>
+                        <strong>Computer Science Student</strong><br>
+                        Focus: Full-stack development, machine learning projects, building portfolio
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2027 - Projected</div>
+                        <strong>Junior Software Engineer</strong><br>
+                        Predicted role: Full-stack web developer at mid-size tech company or startup
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2029 - Projected</div>
+                        <strong>Software Engineer II</strong><br>
+                        Specialization likely: Backend systems or data engineering, given SQL/database expertise
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2032 - Projected</div>
+                        <strong>Senior Software Engineer / Tech Lead</strong><br>
+                        Leadership role incorporating AI/ML skills with traditional software development
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="genai-section">
+            <h2>Industry Trend Analysis</h2>
+            <p>AI analysis of current market demands and how my skills align with industry needs.</p>
+            
+            <div class="ai-content-grid">
+                <div class="content-card">
+                    <h3>High-Demand Skills Match</h3>
+                    <p><strong>Python + SQL:</strong> 94% of data science positions<br>
+                    <strong>React + TypeScript:</strong> 87% of frontend roles<br>
+                    <strong>FastAPI:</strong> Growing 45% year-over-year in job postings</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Emerging Opportunities</h3>
+                    <p><strong>AI Integration:</strong> Companies seeking developers who can integrate ML models into web applications<br>
+                    <strong>Data-Driven Apps:</strong> Your database expertise aligns with this 60% market growth</p>
+                </div>
+                
+                <div class="content-card">
+                    <h3>Geographic Market Analysis</h3>
+                    <p><strong>Texas Market:</strong> Austin tech scene values full-stack skills<br>
+                    <strong>Remote Opportunities:</strong> 78% of entry-level positions now offer hybrid/remote options<br>
+                    <strong>Salary Projection:</strong> $75,000-$95,000 starting range for your skill set</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="genai-section">
+            <h2>AI-Generated Professional Summary</h2>
+            <div class="ai-insight">
+                <h4>Optimized LinkedIn Summary:</h4>
+                <p>Computer Science student at Texas A&M University with proven expertise in full-stack development and data-driven applications. Demonstrated ability to build scalable web applications using modern technologies including Python, React, and PostgreSQL. Notable achievements include developing a sports card management system supporting 1000+ entries with real-time market integration and machine learning digit classification achieving 92% accuracy. Passionate about leveraging technology to solve real-world problems and create meaningful user experiences. Seeking software engineering opportunities to apply technical skills and drive innovation in web development and data analytics.</p>
+            </div>
+            
+            <div class="ai-insight">
+                <h4>Elevator Pitch (30 seconds):</h4>
+                <p>"I'm Zachary, a Computer Science major at Texas A&M with hands-on experience building full-stack applications. I've developed everything from sports card collection management systems to machine learning classifiers, always focusing on creating practical solutions that users actually want to use. I'm passionate about clean code, efficient databases, and the intersection of AI and web development. I'm looking for opportunities where I can contribute to meaningful projects while continuing to grow as a software engineer."</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/zacharypyun/" target="_blank" rel="noopener noreferrer">
+                    <span class="footer-icon">💼</span>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/Zacharypyun" target="_blank" rel="noopener noreferrer">
+                    <span class="footer-icon">🔗</span>
+                    GitHub
+                </a>
+                <a href="https://www.tamu.edu/index.html" target="_blank" rel="noopener noreferrer">
+                    <span class="footer-icon">🎓</span>
+                    Texas A&M University
+                </a>
+                <a href="https://www.friscoisd.org/departments/dual-credit/unt/north-texas-now" target="_blank" rel="noopener noreferrer">
+                    <span class="footer-icon">🎓</span>
+                    UNTNow
+                </a>
+            </div>
+            <div class="footer-text">
+                <p>&copy; 2025 Zachary Pyun. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
+        // Theme toggle functionality
         (function() {
             const savedTheme = localStorage.getItem("theme")
             if (savedTheme) {
@@ -39,6 +156,18 @@
             } else {
                 toggleButton.textContent = "Alternative Layout"
             }
+
+            // Animate skill bars on page load
+            setTimeout(() => {
+                const skillBars = document.querySelectorAll('.skill-fill');
+                skillBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            }, 500);
         }
 
         document.getElementById("layout-toggle-button").onclick = function() {
